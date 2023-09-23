@@ -1,0 +1,116 @@
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This sets the height of the center container to 100% of the viewport height, effectively centering it vertically. */
+}
+
+.button-container {
+    text-align: center; /* Center the buttons horizontally within the container. */
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 32px;
+    padding: 12px 50px;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+.btn + .btn {
+    margin-left: 16px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    
+}
+
+.btn--success {
+    background-color: #71be34;
+}
+.btn--warn {
+    background-color: #ffb702;
+}
+.btn--danger {
+    background-color: #ff623d;
+}  
+
+.btn--disable {
+    opacity: 0.5 !important;
+    cursor: default;
+}
+
+
+/* Toast */
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+}
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px 0px;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear 0.3s;
+    
+    
+}
+.toast + .toast {
+    margin-top: 16px;
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+.toast--success {
+    color: #71be34;
+}
+
+.toast__icon,
+.toast__close {
+    padding: 0 16px;
+}
+
+.toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+    line-height: 1.5px;
+}
+
+.toast__close {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
